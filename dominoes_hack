@@ -1,0 +1,389 @@
+http://www.theprohack.com/2012/07/hacking-dominos-coupon-generator-free.html
+
+
+
+
+SLOT MATCHINE
+https://pizzaonline.dominos.co.in/slot-machine/index.php
+
+
+
+HACK_AGAIN
+http://www.dwtricks.com/2015/01/dominos-pizza-fortunes-slot-hack-100.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function confirmLogin()
+{
+     var mobile = $('#txtMobileNo').val();
+     var password = $('#txtPassword').val();
+     var error = 0;
+     var errormessage = '<h3 style="padding-left:10px;">Error!</h3><p style="padding:10px">';
+    if(mobile.length != 10 )
+        {
+            error = 1;
+            errormessage = errormessage + 'Please enter a valid mobile number<br />';
+        }
+    if(password == '')
+    {
+            error = 1;
+            errormessage = errormessage + 'Please enter a password<br />';
+    }
+
+     if(error == 1)
+     {
+        $.prompt(errormessage+'</p>');
+     }
+    else
+
+    {
+       var dataString = 'txtMobileNo='+ mobile+'&password='+password;
+        $('#blocker').css('display','block');
+        $.ajax
+        ({
+            type: "POST",
+            url: "verifylogin.php",
+            data: dataString,
+            cache: false,
+            success: function(html)
+            {
+                if(html=="1")
+                {
+                   window.location='../dashboard.php?r=1';
+                }
+                else
+                {
+                    $('#blocker').css('display','none');
+                   $.prompt('<h3 style="padding-left:10px;">Error!</h3><p style="padding:10px">You have entered an incorrect mobile number / password.<br />Kindly try again or click on "Forgot Password" to retreive it</p>');
+                }
+
+            }
+        });
+    }
+    }                                             
+function submitForgotPassword()
+{
+    var mobile = $('#fpMobile').val();
+    $.fancybox.close();
+    if(mobile.length == 10 )
+        {
+
+            var dataString = 'fpMobile='+ mobile;
+            $('#blocker').css('display','block');
+            $.ajax
+            ({
+                type: "GET",
+                url: "requestpin.php",
+                data: dataString,
+                cache: false,
+                success: function(html)
+                {
+                    if(html=="1")
+                    {
+                       $('#blocker').css('display','none');
+                       $.prompt('<h3 style="padding-left:10px;">Success!</h3><p style="padding:10px">Password sent successfully to you registered Email ID</p>');
+                    }
+                    else
+                    {
+                       $('#blocker').css('display','none');
+                       $.prompt('<h3 style="padding-left:10px;">Error!</h3><p style="padding:10px">The mobile number you have entered is not registered with us. If you are ordering for the first time kindly use the "first time order" section');
+                    }
+
+                }
+            });
+        }
+
+    else
+
+        {
+           $.prompt('<h3 style="padding-left:10px;">Error!</h3><p style="padding:10px">Please enter a valid mobile number</p>');
+        }
+
+}
+
+function setStreetNameValue()
+ {
+  var streetName = $('#txtStreetName').val();
+   if(streetName == '' || streetName == 'Street / Society Name')
+     {
+        $('#txtStreetName').val('');
+     }
+
+ }
+
+ function removeStreetNameValue()
+ {
+     var streetName = $('#txtStreetName').val();
+     if(streetName == '' || streetName == 'Street / Society Name')
+     {
+        $('#txtStreetName').val('Street / Society Name');
+     }
+ }
+
+ function setHouseNoValue()
+ {
+     var flatNo = $('#txtFlatNo').val();
+     if(flatNo == '' || flatNo == 'Flat / House No.')
+     {
+      $('#txtFlatNo').val('');
+     }
+ }
+
+ function removeHouseNoValue()
+ {
+     var flatNo = $('#txtFlatNo').val();
+     var flatNo = $('#txtFlatNo').val();
+     if(flatNo == '' || flatNo == 'Flat / House No.')
+     {
+        $('#txtFlatNo').val('Flat / House No.');
+     }
+ }
+ 
+ 
+ function changeOrderType(orderType)
+{
+    if(orderType == 'P')
+    {
+        $('#pickup').css('display','block');
+        $('#homedelivery').css('display','none');
+    }
+    else
+    {
+        $('#pickup').css('display','none');
+        $('#homedelivery').css('display','block');
+    }
+}
+
+
+function confirmAddressSubmission()
+{
+
+     var streetName = $('#txtStreetName').val();
+     var houseNo = $('#txtFlatNo').val();
+
+     var error_message = '<h3 style="padding-left:10px;">Error!</h3><p style="padding:10px">';
+     var error = 0;
+
+     if (streetName == 'Street / Society Name' || streetName == '')
+     {
+         error_message = error_message + 'Please enter a Street / Society name<br />';
+         error = 1;
+     }
+     if (houseNo == 'Flat / House No.' || houseNo == '')
+     {
+         error_message = error_message + 'Please enter a Flat / House No<br />';
+         error = 1;
+     }
+     error_message = error_message+'</p>';
+
+     if(error == 1)
+     {
+         $.prompt(error_message);
+     }
+
+     else
+     {
+        $('#homedeliveryform').submit();
+        
+     }
+}
+
+function readCookie(name) {
+    var cookieName = name + "=";
+    var cookieArray = document.cookie.split(';');
+    for (var i = 0; i < cookieArray.length; i++){
+        var cookie = cookieArray[i];
+        while (cookie.charAt(0)==' '){
+            cookie = cookie.substring(1,cookie.length);
+        }
+        if (cookie.indexOf(cookieName) == 0){
+            return cookie.substring(cookieName.length,cookie.length);
+        }
+    }
+    return null;
+}
+
+
+
+$(function()
+{
+    
+    $(".modal").fancybox({'autoScale': false, 'width':510, 'height': 270, 'autoDimensions': false, 'scrolling': 'no'});
+
+$('#captcha-submit').click(function()
+{
+    var captcha=$('#captcha-form').val();
+    var dataString = 'cap='+ captcha;
+    $.ajax({
+        type: "POST",
+        url: "captcha-action.php",
+        data: dataString,
+        success: function(html)
+        {
+        if(html==1)
+        {
+            $.prompt('<h3 style="padding-left:10px;"></h3><p style="padding:10px">Invalid Captcha!<br/>Please enter another word from the image!');
+            $('#captcha').attr('src','captcha.php?'+Math.random());
+        }
+        if(html==0)
+        {
+            //$.prompt('<h3 style="padding-left:10px;"></h3><p style="padding:10px">Valid captcha!');
+            $('.captcha-wrap,.fade-out').fadeOut(500,function(){$('.fade-in').fadeIn();})
+        }
+        if(html==2)
+        {
+            $.prompt('<h3 style="padding-left:10px;"></h3><p style="padding:10px">Please enter the captcha from the image');  
+            $('#captcha').attr('src','captcha.php?'+Math.random());
+        }
+        if(html==3)
+        {
+            var t = '<h3 style="padding-left:10px;">Invalid Captcha!</h3><p style="padding:10px">You have reached the maximum attempt. Please try again.</p>';
+            $.prompt(t, {buttons: {Ok: true},
+              submit: function(e) {
+                if (e == true) {
+                  window.location='index.php';
+                }
+              }
+            });
+        }
+    }}); return false;
+});
+
+
+    var session_id = readCookie('session_id');
+        
+        window.slot_attempts = 0; window.lastAttempt = 0;
+        
+        $('#captcha-form').focus();
+        
+        $('#control').click(function(){
+            
+            if(window.slot_attempts == 1 && window.lastAttempt == 1){
+                var wantsToContinue = confirm("Hmmm! Getting Greedy?\nWell you can try only 1 more time and you will lose this coupon. Are you sure you want to try again?\nPress 'OK' to try again or 'Cancel' to exit.");
+                if(!wantsToContinue){
+                    return;
+                }
+            }
+            
+            if(window.slot_attempts == 735209){
+                alert("You have run out of your chances now. You may only use this coupon today");
+                $(this).remove();
+                $('#result').css('margin-top','75px');
+                return;
+            }
+            
+            var buttonState = $(this).val();
+            $(this).attr('disabled',true).val('Please wait...');
+            
+            if(buttonState == 'Try Again' || buttonState == 'Please wait...'){
+                var i=1;
+                for(i=1;i<=4;i++)
+                $('#slot'+i).css('background-position','0px 0px');
+            }
+            
+            $.post('process-slot.php',{ session_id : session_id},function(json){                
+                var slot_result = slot_result_desc = ''; var limit = slots = 0;    
+                
+                window.slot_attempts = json['slot_attempts'];
+                
+                for(slots = 0; slots <= json['slot_result_position'].length; slots++){
+                    var bgPos = json['slot_result_position'][slots];
+                    if(bgPos == null){
+                        bgPos = 0;
+                    }
+                  $('#slot'+(slots+1)).animate( { backgroundPosition:"(0px "+bgPos+"px)"}, { duration: (1+(slots*1)), complete: function(){ 
+limit++; //console.log(limit); 
+if(limit == 4){
+                            if(slot_result = json['slot_result']){
+                                //console.log('slot result: '+slot_result);
+                                switch(slot_result){
+                                    case '1':
+                                        slot_result_desc = "JACKPOT!";
+                                        window.lastAttempt = 1;
+                                        break;
+                                    case '2D':
+                                        slot_result_desc = "Wooho! That's two doubles for you!";
+                                        window.lastAttempt = 1;
+                                        break;
+                                    case '3':
+                                        slot_result_desc = "Congrats! You have landed a double!";
+                                        window.lastAttempt = 1;
+                                        break;
+                                    case '3A':
+                                        slot_result_desc = "Whoopee! You have landed a triple!";
+                                        window.lastAttempt = 1;
+                                        break;
+                                    case '4':
+                                        slot_result_desc = "Sorry! Try again...";
+                                        window.lastAttempt = 1;
+                                        break;
+                                    default:
+                                        slot_result_desc = "You've tried your luck twice already! You may only use the last coupon you won.";
+                                }
+                            }
+                        
+                            $('#result').html(slot_result_desc+'<br />');        
+                            if(json['coupon_description']){
+                                $('#result').append(json['coupon_description']);        
+                            }
+                            if(json['unique_coupon'])
+                                $('#slot-result-coupon').html('Your coupon code is: <strong>'+json['unique_coupon']+'</strong>');
+                            else{
+                                $('#slot-result-coupon').html('');
+                            }
+                            
+                            //console.log($('#control').val());
+                            var buttonState = $('#control').val(); 
+                            if(buttonState == 'Start' || buttonState == 'Please wait...'){
+                                $('#control').val('Try Again').attr('disabled',false);
+                            }
+                            else{
+                                $('#control').attr('disabled',false);
+                            }
+                            
+                        } // limit == 4
+                    }}); // slot animate
+                } // for loop
+            }); // post
+            
+        }); // click
+
+}); // doc.ready
+
