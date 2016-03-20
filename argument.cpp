@@ -1,3 +1,5 @@
+//reverse an array
+
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -16,4 +18,4 @@ int reverse(int arr[], int n)
 			arr[j] = temp;
 		}
 
-return 0;
+}

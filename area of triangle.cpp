@@ -1,3 +1,5 @@
+//program to find area of any given triangle
+
 #include <iostream>
 #include <stdlib.h>
 #include <math.h>
@@ -13,6 +15,6 @@ int main()
 
     std::cout << "Area of the given triangle is: " << area <<std::endl;
 
-    return 1;
+    return 0;
 
 }

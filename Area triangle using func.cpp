@@ -1,8 +1,10 @@
+//area of triangle using functions
+
 #include <stdlib.h>
 #include <iostream>
 #include <math.h>
 
-double area_of_triangle(double a, double b, double c); //ye line ni samaj aayi function declaration hai you forgot not my fault lets make without using functions create new
+double area_of_triangle(double a, double b, double c)
 using namespace std;
 
 int main() {

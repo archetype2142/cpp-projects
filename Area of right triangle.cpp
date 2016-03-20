@@ -1,3 +1,5 @@
+//area of right angled triangle
+
 #include <iostream>
 #include <stdlib.h>
 #include <math.h>
