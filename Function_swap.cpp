@@ -17,18 +17,19 @@ int main()
 
 	cout << "values before swap\n " << "a = " << a << ", " << "b = " << b << endl;
 	swap(a, b);
+	cout << "Swapped values are: \n";
+	cout << "a = " << a << ", " << "b = " << b << endl;
+
 
 	return 0;
 } 
 
-int swap(int a, int b)
+int swap(int a, int b)     // call by value
 {
 	int temp;
 
 	temp = a;
 	a = b;
 	b = temp;
-
-	cout << "Swapped values are: \n";
-	cout << "a = " << a << ", " << "b = " << b << endl;
 }
+	
