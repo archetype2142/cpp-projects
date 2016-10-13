@@ -22,6 +22,6 @@ return 1;
 }
 
 double area_of_triangle(double a, double b, double c) {
-double s = (a + b + c) / 2;
+double s = (a + b + c) / 2; // to calculate the semi perimeter of triangle
 return sqrt(s * fabs(s - a) * fabs(s - b) * fabs(s - c));
 }
