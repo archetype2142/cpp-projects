@@ -5,12 +5,12 @@
  int main()
 
 {
-	char your_name[20];
+	char name[20];
 	
 	std::cout << "Enter your name: ";
-	std::cin >> your_name;
+	std::cin >> name;
 	std::cout << "Goodmorning, ";
-	std::cout.write (your_name, strlen(your_name)) << std::endl;
+	std::cout.write (name, strlen(name)) << std::endl;
 
     return 0;
 }
