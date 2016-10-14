@@ -6,16 +6,16 @@ using namespace std;
 
 int main()
 {
-	int findpos(char a[], char y);
-	char a[80], y, c;
+	int findpos(char str[], char y);
+	char str[80], y, c;
 
 	cout << "Enter a string: ";
-	cin.getline(a, 80);
+	cin.getline(str, 80);
 
 	cout << "Enter a character to be searched for: ";
 	cin >> y;
 
-	c = findpos(a, y);
+	c = findpos(str, y);
 
 	if(c == 0)
 	{
@@ -25,13 +25,13 @@ int main()
 	return 0;
 }
 
-int findpos(char a[], char y)
+int findpos(char str[], char y)
 {
 	int flag = 0;
 
 	for(int i = 0; a[i] != '\0'; i++)
 	{
-		if(a[i] == y)
+		if(str[i] == y)
 		{
 			flag = 1;
 			cout << "Character is at position " << i + 1 << "\n";
