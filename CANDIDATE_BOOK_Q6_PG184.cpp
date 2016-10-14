@@ -25,7 +25,7 @@ public:
 		if(score > 99 && score <= 100)
 			cout << "Topper\n";
 		else if(score < 99)
-			cout << "Failiure\n";
+			cout << "Failure\n";
 	}
 
 	void DISPLAY(){
