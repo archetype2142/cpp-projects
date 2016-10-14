@@ -1,4 +1,4 @@
-//area of right angled triangle
+//area of any angled triangle
 
 #include <iostream>
 #include <stdlib.h>
