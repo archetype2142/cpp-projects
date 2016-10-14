@@ -1,4 +1,4 @@
-//program to find area of any given triangle
+//program to find area of an equilateral triangle
 
 #include <iostream>
 #include <stdlib.h>
@@ -11,7 +11,7 @@ int main()
 	std::cout << "Enter the side of the triangle: ";
     std::cin >> side;
 
-    area = (sqrt(3)/4) * pow(side, 2);
+    area = (sqrt(3))/4 * pow(side, 2);
 
     std::cout << "Area of the given triangle is: " << area <<std::endl;
 
