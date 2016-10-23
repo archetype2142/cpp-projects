@@ -4,10 +4,12 @@
 #include <stdlib.h>
 #include <math.h>
 
+using namespace std;
+
 int main()
 {
 	float s, a, b, c; //s = semi_perimeter, a = side_1, b= side_2, c = side_3
-	std::cout << "Enter side a: ";
+	cout << "Enter side a: ";
 	std::cin >> a;
 	std::cout << "Enter side b: ";
 	std::cin >> b;
